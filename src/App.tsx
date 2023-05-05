@@ -15,7 +15,7 @@ const App = () => {
 
 	return (
 		<Row>
-			<Col xs={{ span: 18, push: 3 }} md={{ span: 14, push: 4 }}>
+			<Col xs={{ span: 18, push: 3 }} md={{ span: 14, push: 5 }}>
 				<h1>Memos List</h1>
 				<Button
 					type='primary'
