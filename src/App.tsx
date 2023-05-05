@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useDispatch } from "react-redux";
+import { Button, Row, Col } from "antd";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { modalActions } from "./store";
+
+import MemoForm from "./components/MemoForm";
+import MemosList from "./components/MemosList";
+
+const App = () => {
+	const dispatch = useDispatch();
+
+	const showModal = () => {
+		dispatch(modalActions.openModal(null));
+	};
+
+	return (
+		<Row>
+			<Col xs={{ span: 18, push: 3 }} md={{ span: 14, push: 4 }}>
+				<h1>Memos List</h1>
+				<Button
+					type='primary'
+					onClick={showModal}
+					style={{ marginBottom: "18px" }}
+				>
+					Add new memo
+				</Button>
+				<MemosList />
+				<MemoForm />
+			</Col>
+		</Row>
+	);
+};
 
 export default App;
