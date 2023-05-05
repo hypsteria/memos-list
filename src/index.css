@@ -6,3 +6,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@media screen and (max-width: 420px){
+  .ant-list-item {
+    flex-wrap: wrap;
+  }
+
+  .ant-list .ant-list-item .ant-list-item-action {
+    display: block;
+    width: 100%;
+    margin: 1rem 0 0;
+  }
+}
